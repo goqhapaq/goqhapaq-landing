@@ -1,0 +1,15 @@
+---
+interface Props {
+  class?: string;
+  delay?: number;
+}
+
+const { class: className = '', delay = 0 } = Astro.props;
+---
+
+<div 
+  class={`feature-card reveal-on-scroll ${className}`}
+  style={delay ? `animation-delay: ${delay}s;` : ''}
+>
+  <slot />
+</div>

@@ -1,0 +1,70 @@
+---
+// Camino sutil de fondo que recorre la página
+---
+
+<!-- Camino de fondo con patrón orgánico -->
+<div class="fixed inset-0 pointer-events-none z-0 opacity-30">
+  <!-- SVG del camino serpenteante -->
+  <svg class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+    <defs>
+      <!-- Gradiente del camino -->
+      <linearGradient id="pathGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#e85d3a;stop-opacity:0.1" />
+        <stop offset="50%" style="stop-color:#14b8a6;stop-opacity:0.15" />
+        <stop offset="100%" style="stop-color:#eab308;stop-opacity:0.1" />
+      </linearGradient>
+      
+      <!-- Patrón de textura -->
+      <pattern id="pathTexture" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1" fill="#e85d3a" opacity="0.1"/>
+        <circle cx="12" cy="12" r="1" fill="#14b8a6" opacity="0.1"/>
+      </pattern>
+    </defs>
+    
+    <!-- Camino principal serpenteante -->
+    <path 
+      id="main-path"
+      d="M 100 0 Q 300 200, 200 400 T 400 800 Q 500 1000, 300 1200 T 200 1600 Q 100 1800, 300 2000 T 400 2400 Q 500 2600, 300 2800 T 200 3200"
+      fill="none"
+      stroke="url(#pathGradient)"
+      stroke-width="80"
+      stroke-linecap="round"
+      opacity="0.4"
+    />
+    
+    <!-- Línea central más visible -->
+    <path 
+      d="M 100 0 Q 300 200, 200 400 T 400 800 Q 500 1000, 300 1200 T 200 1600 Q 100 1800, 300 2000 T 400 2400 Q 500 2600, 300 2800 T 200 3200"
+      fill="none"
+      stroke="#e85d3a"
+      stroke-width="3"
+      stroke-linecap="round"
+      opacity="0.2"
+      stroke-dasharray="10 20"
+    />
+  </svg>
+  
+  <!-- Puntos decorativos a lo largo del camino -->
+  <div class="absolute top-[15%] left-[20%] w-2 h-2 bg-qhapaq-terracota-400 rounded-full opacity-40"></div>
+  <div class="absolute top-[30%] right-[25%] w-3 h-3 bg-qhapaq-turquesa-400 rounded-full opacity-30"></div>
+  <div class="absolute top-[45%] left-[30%] w-2 h-2 bg-qhapaq-ocre-400 rounded-full opacity-40"></div>
+  <div class="absolute top-[60%] right-[20%] w-3 h-3 bg-qhapaq-terracota-400 rounded-full opacity-30"></div>
+  <div class="absolute top-[75%] left-[25%] w-2 h-2 bg-qhapaq-turquesa-400 rounded-full opacity-40"></div>
+  <div class="absolute top-[90%] right-[30%] w-3 h-3 bg-qhapaq-ocre-400 rounded-full opacity-30"></div>
+</div>
+
+<style>
+  /* Animación sutil del camino */
+  #main-path {
+    animation: pathFlow 20s ease-in-out infinite;
+  }
+
+  @keyframes pathFlow {
+    0%, 100% {
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dashoffset: 50;
+    }
+  }
+</style>

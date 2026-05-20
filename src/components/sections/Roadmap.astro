@@ -1,0 +1,167 @@
+---
+const milestones = [
+  {
+    quarter: 'Q2 2024',
+    title: 'MVP & Beta Launch',
+    status: 'completed',
+    features: [
+      'Análisis básico de rutas',
+      'Mapas y navegación',
+      'Alertas de clima',
+      'Comunidad beta cerrada'
+    ]
+  },
+  {
+    quarter: 'Q3 2024',
+    title: 'Comunidad & Social',
+    status: 'in-progress',
+    features: [
+      'Compartir rutas y experiencias',
+      'Sistema de calificaciones',
+      'Fotos y reseñas',
+      'Grupos de exploradores'
+    ]
+  },
+  {
+    quarter: 'Q4 2024',
+    title: 'Modo Offline',
+    status: 'upcoming',
+    features: [
+      'Descarga de mapas offline',
+      'Navegación sin internet',
+      'Caché inteligente',
+      'Sincronización automática'
+    ]
+  },
+  {
+    quarter: 'Q1 2025',
+    title: 'IA & Predicciones',
+    status: 'upcoming',
+    features: [
+      'Recomendaciones personalizadas',
+      'Predicción de condiciones',
+      'Análisis de seguridad con IA',
+      'Asistente virtual'
+    ]
+  },
+  {
+    quarter: 'Q2 2025',
+    title: 'Android Auto',
+    status: 'upcoming',
+    features: [
+      'Integración con vehículos',
+      'Comandos de voz',
+      'HUD en pantalla',
+      'Alertas en tiempo real'
+    ]
+  },
+  {
+    quarter: 'Q3 2025',
+    title: 'Expansión LATAM',
+    status: 'upcoming',
+    features: [
+      'Cobertura en 10+ países',
+      'Contenido localizado',
+      'Comunidades regionales',
+      'Partnerships estratégicos'
+    ]
+  }
+];
+---
+
+<section id="roadmap" class="section-padding bg-qhapaq-dark-950 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-qhapaq-terracota-600 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-qhapaq-terracota-800 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="container-custom relative z-10">
+    <div class="max-w-3xl mx-auto text-center mb-20 reveal-on-scroll">
+      <div class="inline-block px-4 py-2 rounded-full bg-qhapaq-terracota-500/10 border border-qhapaq-terracota-500/20 mb-6">
+        <span class="text-qhapaq-terracota-400 font-semibold text-sm">Roadmap</span>
+      </div>
+      
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
+        El futuro de
+        <span class="gradient-text"> la exploración</span>
+      </h2>
+      
+      <p class="text-xl text-gray-400 text-balance">
+        Nuestra visión a largo plazo para transformar la forma en que exploramos LATAM.
+      </p>
+    </div>
+
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {milestones.map((milestone, index) => (
+          <div 
+            class="reveal-on-scroll"
+            style={`animation-delay: ${index * 0.1}s;`}
+          >
+            <div class={`
+              relative p-6 rounded-2xl border-2 transition-all duration-300 h-full
+              ${milestone.status === 'completed' 
+                ? 'bg-qhapaq-terracota-500/10 border-qhapaq-terracota-500/30' 
+                : milestone.status === 'in-progress'
+                ? 'bg-blue-500/10 border-blue-500/30 ring-2 ring-blue-500/20'
+                : 'glass-effect border-white/10 hover:border-qhapaq-terracota-500/20'
+              }
+            `}>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-sm font-semibold text-gray-400">{milestone.quarter}</span>
+                {milestone.status === 'completed' && (
+                  <div class="w-8 h-8 rounded-full bg-qhapaq-terracota-500/20 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-qhapaq-terracota-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                )}
+                {milestone.status === 'in-progress' && (
+                  <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
+                    <div class="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                  </div>
+                )}
+              </div>
+
+              <h3 class="text-xl font-display font-bold mb-4">{milestone.title}</h3>
+
+              <ul class="space-y-2">
+                {milestone.features.map((feature) => (
+                  <li class="flex items-start space-x-2 text-sm text-gray-400">
+                    <svg class="w-4 h-4 text-qhapaq-terracota-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {milestone.status === 'in-progress' && (
+                <div class="mt-4 pt-4 border-t border-blue-500/20">
+                  <div class="flex items-center justify-between text-xs text-blue-400 mb-2">
+                    <span>En desarrollo</span>
+                    <span>65%</span>
+                  </div>
+                  <div class="w-full h-1.5 bg-blue-500/10 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style="width: 65%"></div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 text-center reveal-on-scroll">
+        <div class="inline-block p-6 rounded-2xl glass-effect border border-qhapaq-terracota-500/20">
+          <p class="text-gray-300 mb-2">
+            ¿Tienes ideas o sugerencias para el roadmap?
+          </p>
+          <a href="#beta" class="text-qhapaq-terracota-400 hover:text-qhapaq-terracota-300 font-semibold transition-colors">
+            Únete a la comunidad y comparte tu feedback →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

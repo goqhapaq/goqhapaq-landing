@@ -1,0 +1,92 @@
+---
+const problems = [
+  {
+    image: 'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800&q=80',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />`,
+    title: 'Condiciones Impredecibles',
+    description: 'Neblina, lluvia y clima extremo sin información en tiempo real'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />`,
+    title: 'Peligros Ocultos',
+    description: 'Derrumbes, caminos dañados y zonas de riesgo sin señalización'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />`,
+    title: 'Sin Conectividad',
+    description: 'Zonas remotas sin señal donde los mapas tradicionales fallan'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />`,
+    title: 'Información Limitada',
+    description: 'Falta de datos sobre altitud, dificultad y puntos de interés'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />`,
+    title: 'Inseguridad Vial',
+    description: 'Rutas peligrosas sin alertas de seguridad o comunidad activa'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=800&q=80',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />`,
+    title: 'Rutas Desconocidas',
+    description: 'Exploración limitada por falta de información confiable'
+  }
+];
+---
+
+<section id="problem" class="section-padding bg-gradient-to-b from-black to-qhapaq-dark-950">
+  <div class="container-custom">
+    <div class="max-w-3xl mx-auto text-center mb-16 reveal-on-scroll">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
+        Los viajes no deberían ser
+        <span class="gradient-text"> una apuesta</span>
+      </h2>
+      <p class="text-xl text-gray-400 text-balance">
+        Cada año, miles de viajeros enfrentan situaciones peligrosas por falta de información confiable sobre sus rutas.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {problems.map((problem, index) => (
+        <div 
+          class="group relative reveal-on-scroll overflow-hidden rounded-2xl"
+          style={`animation-delay: ${index * 0.1}s;`}
+        >
+          <div class="relative h-80 overflow-hidden">
+            <img 
+              src={problem.image} 
+              alt={problem.title}
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+            
+            <div class="absolute top-4 left-4">
+              <div class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <Fragment set:html={problem.icon} />
+                </svg>
+              </div>
+            </div>
+
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <h3 class="text-2xl font-display font-bold mb-2 text-white">{problem.title}</h3>
+              <p class="text-gray-300 text-sm leading-relaxed">{problem.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-20 text-center reveal-on-scroll">
+      <p class="text-2xl md:text-3xl font-display font-bold text-white">
+        Es hora de cambiar la forma en que exploramos
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/layout/Navbar.astro';
+import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import Problem from '../components/sections/Problem.astro';
+import About from '../components/sections/About.astro';
+import Features from '../components/sections/Features.astro';
+import Adventure from '../components/sections/Adventure.astro';
+import Roadmap from '../components/sections/Roadmap.astro';
+import CTA from '../components/sections/CTA.astro';
+import AnimatedPath from '../components/ui/AnimatedPath.astro';
+---
+
+<BaseLayout>
+  <Navbar />
+  <AnimatedPath />
+  <main>
+    <Hero />
+    <Problem />
+    <About />
+    <Features />
+    <Adventure />
+    <Roadmap />
+    <CTA />
+  </main>
+  <Footer />
+</BaseLayout>

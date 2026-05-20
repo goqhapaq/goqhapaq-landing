@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://qhapaq.com/sitemap.xml

@@ -1,0 +1,52 @@
+---
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img 
+      src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop" 
+      alt="Montañas andinas" 
+      class="w-full h-full object-cover opacity-40"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
+  </div>
+
+  <!-- Animated Gradient Overlays -->
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-qhapaq-terracota-600/30 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-qhapaq-terracota-700/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+  </div>
+
+  <div class="container-custom relative z-10 pt-32 pb-20">
+    <div class="max-w-5xl mx-auto text-center">
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 animate-fade-in">
+        Explora el camino,
+        <br />
+        <span class="gradient-text">vive la aventura</span>
+      </h1>
+
+      <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto animate-slide-up text-balance">
+        La plataforma inteligente de rutas y exploración que transforma cada viaje en una experiencia segura e inolvidable.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+        <a href="#beta" class="btn-primary">
+          Únete al Beta
+        </a>
+        <a href="#features" class="btn-secondary">
+          Descubre más
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <a href="#problem" class="text-gray-400 hover:text-white transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </a>
+  </div>
+</section>

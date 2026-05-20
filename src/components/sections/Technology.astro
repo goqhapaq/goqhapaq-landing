@@ -1,0 +1,124 @@
+---
+const techStack = [
+  {
+    name: 'Flutter',
+    description: 'Framework multiplataforma para experiencias nativas',
+    icon: '📱'
+  },
+  {
+    name: 'Spring Boot',
+    description: 'Backend robusto y escalable',
+    icon: '⚡'
+  },
+  {
+    name: 'PostgreSQL + PostGIS',
+    description: 'Base de datos geoespacial avanzada',
+    icon: '🗄️'
+  },
+  {
+    name: 'Redis',
+    description: 'Caché de alto rendimiento',
+    icon: '⚙️'
+  },
+  {
+    name: 'Apache Kafka',
+    description: 'Streaming de datos en tiempo real',
+    icon: '📡'
+  },
+  {
+    name: 'Google Maps APIs',
+    description: 'Mapas y geolocalización precisos',
+    icon: '🗺️'
+  }
+];
+---
+
+<section id="technology" class="section-padding bg-gradient-to-b from-black to-qhapaq-dark-950 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(22, 163, 74, 0.15) 1px, transparent 0); background-size: 40px 40px;"></div>
+  </div>
+
+  <div class="container-custom relative z-10">
+    <div class="max-w-3xl mx-auto text-center mb-20 reveal-on-scroll">
+      <div class="inline-block px-4 py-2 rounded-full bg-qhapaq-terracota-500/10 border border-qhapaq-terracota-500/20 mb-6">
+        <span class="text-qhapaq-terracota-400 font-semibold text-sm">Tecnología</span>
+      </div>
+      
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
+        Construido con
+        <span class="gradient-text"> tecnología de punta</span>
+      </h2>
+      
+      <p class="text-xl text-gray-400 text-balance">
+        Una arquitectura moderna y escalable que garantiza rendimiento, confiabilidad y seguridad.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+      {techStack.map((tech, index) => (
+        <div 
+          class="feature-card reveal-on-scroll"
+          style={`animation-delay: ${index * 0.1}s;`}
+        >
+          <div class="text-5xl mb-4">{tech.icon}</div>
+          <h3 class="text-xl font-display font-semibold mb-2">{tech.name}</h3>
+          <p class="text-gray-400">{tech.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="glass-effect rounded-3xl p-8 md:p-12 border-2 border-qhapaq-terracota-500/20 reveal-on-scroll">
+      <h3 class="text-3xl md:text-4xl font-display font-bold mb-8 text-center">
+        Arquitectura Moderna y Escalable
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-700/20 flex items-center justify-center">
+            <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h4 class="font-display font-semibold text-lg mb-2">Frontend</h4>
+          <p class="text-gray-400 text-sm">Flutter para iOS y Android con UI nativa y fluida</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br from-qhapaq-terracota-500/20 to-qhapaq-terracota-700/20 flex items-center justify-center">
+            <svg class="w-8 h-8 text-qhapaq-terracota-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+            </svg>
+          </div>
+          <h4 class="font-display font-semibold text-lg mb-2">Backend</h4>
+          <p class="text-gray-400 text-sm">Spring Boot con microservicios escalables y seguros</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-700/20 flex items-center justify-center">
+            <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+            </svg>
+          </div>
+          <h4 class="font-display font-semibold text-lg mb-2">Datos</h4>
+          <p class="text-gray-400 text-sm">PostgreSQL + PostGIS para análisis geoespacial avanzado</p>
+        </div>
+      </div>
+
+      <div class="mt-12 p-6 bg-gradient-to-r from-qhapaq-terracota-500/10 to-qhapaq-terracota-700/10 border border-qhapaq-terracota-500/20 rounded-xl">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-lg bg-qhapaq-terracota-500/20 flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-qhapaq-terracota-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-display font-semibold text-lg mb-2">Rendimiento Optimizado</h4>
+            <p class="text-gray-400">
+              Redis para caché de alta velocidad, Kafka para procesamiento de eventos en tiempo real, y CDN global para tiempos de carga mínimos en toda LATAM.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
